@@ -10,7 +10,7 @@ const ProjectList = ({ projects }) => {
     });
     
     return (
-        <h3>{ProjectListItems}</h3>
+        <ul>{ProjectListItems}</ul>
     );
 }
 

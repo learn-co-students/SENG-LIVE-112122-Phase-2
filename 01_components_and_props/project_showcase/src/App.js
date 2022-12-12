@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <div>PROJECT SHOWCASE</div>
+      <div className="app">PROJECT SHOWCASE</div>
       <Header 
         
         // firstName, lastName, age => Keys

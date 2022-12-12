@@ -7,15 +7,17 @@ const ProjectListItem = ({ project }) => {
     const { id, name, about, phase, link, image } = project;
     
     return (
-        <>
-            <h2>ProjectListItem Component</h2>
-            <p>{id}</p>
-            <p>{name}</p>
-            <p>{about}</p>
-            <p>{phase}</p>
-            <p>{link}</p>
-            <p>{image}</p>
-        </>
+        // Not HTML, JSX (JavaScript XML)
+        
+        <li>
+            {/* <h2>ProjectListItem Component</h2> */}
+            {/* <p>{id}</p> */}
+            <p>Project Name: {name}</p>
+            <p>About: {about}</p>
+            <p>Phase: {phase}</p>
+            <a href={link}>Project Link</a>
+            {/* <img src={image} /> */}
+        </li>
     );
 }
 
