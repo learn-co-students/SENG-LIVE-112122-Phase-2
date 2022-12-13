@@ -4,10 +4,16 @@ import ProjectList from "./components/ProjectList";
 
 import projects from "./projects";
 
+import { useState } from "react";
+
 const App = () => {
+  
+  // Create Some State
+  // const [ someState, someStateSetter ] = useState("Louis");
+  
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <ProjectForm />
       <ProjectList projects={projects} />
     </div>

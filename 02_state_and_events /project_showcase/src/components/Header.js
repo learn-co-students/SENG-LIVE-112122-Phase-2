@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   return (
-    <header>
+    <header>  
       <h1>
         <span className="logo">{"//"}</span>
         Project Showcase
