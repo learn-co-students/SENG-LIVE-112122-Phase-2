@@ -13,6 +13,8 @@
 import { useState } from "react";
 
 const ProjectListItem = ({ id, about, image, link, name, phase }) => {
+
+  // const { id, about, image, link, name, phase } = project;
   
   // Initialize State + Setter Function
   // clapCount => State

@@ -1,8 +1,8 @@
 // import React from "react";
 
-import { useState } from "react";
+// import { useState } from "react";
 
-const Header = () => {
+const Header = ({ isDarkMode, setDarkMode }) => {
   
   // Initialize isDarkMode State + Setter Function
 
@@ -17,12 +17,14 @@ const Header = () => {
 
   // [ state itself, setter function]
 
-  const [ isDarkMode, setDarkMode ] = useState(false);
+  // const [ isDarkMode, setDarkMode ] = useState(false);
 
   // console.log(isDarkMode);
 
   const handleClick = () => {
+    
     setDarkMode(!isDarkMode);
+    // setDarkMode(isDarkMode => !isDarkMode);
 
     // 1st Click=> false / true
     // 2nd Click => true / false
@@ -39,7 +41,7 @@ const Header = () => {
       <button onClick={handleClick}>
         {/* CONDITION ? IF TRUE : IF FALSE */}
         
-        {isDarkMode ? "Dark Mode" : "Light Mode" }
+        {isDarkMode ? "Light Mode" : "Dark Mode" }
       </button>
     </header>
   );
