@@ -12,7 +12,15 @@ const App = () => {
     // Pass Down projects => Passing Down State
     // We Can Work With Our Data in a More Flexible Manner
     // We Can Take Advantage of Implicit Component Re-Renders
+  
+  // State => Mutable
   const [projects, setProjects] = useState([]);
+
+  // Cannot Redeclare
+  // const projects = "Something Else"
+
+  // Cannot Reassign
+  // projects = "Something Else"
   
   // Lifted isDarkMode State To App + Created a CB Function to Manage State
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -48,24 +56,26 @@ const App = () => {
       .then(res => res.json())
 
       // Handle Data
-      .then(projects => {
+      .then(myProjects => {
         // console.log(data);
 
         // Setter Function Invocation => Component Re-Render
-        setProjects(projects);
+        setProjects(myProjects);
+
+        // projects = myProjects;
       });
   }
 
   return (
     <div className={ isDarkMode ? "App" : "App light"}>
+      
+      {/* Props = Immutable Configurations */}
       <Header 
         setProjects={setProjects}
         isDarkMode={isDarkMode}
         handleClick={handleClick}
       />
-      <ProjectForm 
-        searchQuery={searchQuery}
-      />
+      <ProjectForm />
       <button onClick={fetchProjects}>Load Projects</button>
       
       {/* <h1>{searchQuery}</h1> */}
