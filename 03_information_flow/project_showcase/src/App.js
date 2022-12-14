@@ -30,6 +30,25 @@ const App = () => {
   // and set the `projects` state to the value 
   // returned by the response
 
+  const fetchProjects = () => {
+    // console.log("Button Clicked!");
+
+    // Specify Our Request URL + HTTP Verbs (if necessary)
+    fetch("http://localhost:4000/projects")
+
+      // Convert JSON Response to JS
+        // JSON.stringify(JS) => Converts JS to JSON
+      .then(res => res.json())
+
+      // Handle Data
+      .then(projects => {
+        // console.log(data);
+
+        // Setter Function Invocation => Component Re-Render
+        setProjects(projects);
+      });
+  }
+
   return (
     <div className={ isDarkMode ? "App" : "App light"}>
       <Header 
@@ -38,7 +57,9 @@ const App = () => {
         handleClick={handleClick}
       />
       <ProjectForm />
-      <button>Load Projects</button>
+      <button onClick={fetchProjects}>Load Projects</button>
+      
+      {/* Pass Down State (Array) */}
       <ProjectList projects={projects} />
     </div>
   );
