@@ -18,6 +18,13 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const handleClick = () => setIsDarkMode(!isDarkMode);
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleOnChange = (e) => setSearchQuery(e.target.value);
+  
+  const searchResults = projects.filter((project) => {
+    return project.name.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
   // # Deliverable 1: Configure a <button> in our App 
   // that will use json-server to fetch projects 
   // and store them in state
@@ -56,11 +63,18 @@ const App = () => {
         isDarkMode={isDarkMode}
         handleClick={handleClick}
       />
-      <ProjectForm />
+      <ProjectForm 
+        searchQuery={searchQuery}
+      />
       <button onClick={fetchProjects}>Load Projects</button>
       
+      {/* <h1>{searchQuery}</h1> */}
+
       {/* Pass Down State (Array) */}
-      <ProjectList projects={projects} />
+      <ProjectList 
+        searchResults={searchResults}
+        handleOnChange={handleOnChange}
+      />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 // import { useState } from "react";
 
 const Header = ({ isDarkMode, handleClick }) => {
-
   const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
 
   // Deliverable 2: Use Inverse Data flow to implement 
