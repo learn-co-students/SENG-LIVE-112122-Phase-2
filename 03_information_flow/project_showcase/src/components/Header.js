@@ -1,16 +1,13 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const handleClick = () => setIsDarkMode(!isDarkMode);
+const Header = ({ isDarkMode, handleClick }) => {
 
   const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
 
   // Deliverable 2: Use Inverse Data flow to implement 
   // Light-Dark mode
 
-  // - Refact isDarkMode state from the `Header` 
+  // - Refactor isDarkMode state from the `Header` 
   // component to the `App` component.
 
   // - Create a callback function that updates 
