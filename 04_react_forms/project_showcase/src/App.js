@@ -27,12 +27,30 @@ const App = () => {
 
   const onToggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
+  const handleAddProject = (newProject) => {
+    // Merge Each New Project Into Our "projects" State
+
+    
+    // Directly Mutating State
+    // setProjects(projects.push(newProject));
+    
+    // Safer Approach
+    setProjects([...projects, newProject]);
+  }
+
   return (
     <div className={isDarkMode ? "App" : "App light"}>
-      <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
-      <ProjectForm />
+      <Header 
+        isDarkMode={isDarkMode} 
+        onToggleDarkMode={onToggleDarkMode} 
+      />
+      <ProjectForm 
+        handleAddProject={handleAddProject}
+      />
       <button onClick={handleClick}>Load Projects</button>
-      <ProjectList projects={projects} />
+      <ProjectList 
+        projects={projects} 
+      />
     </div>
   );
 };
