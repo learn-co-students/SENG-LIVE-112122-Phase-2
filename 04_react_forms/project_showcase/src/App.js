@@ -10,7 +10,7 @@
 
 //     - Set the `projects` state to the new array value
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ProjectForm from "./components/ProjectForm";
 import ProjectList from "./components/ProjectList";
@@ -19,11 +19,18 @@ const App = () => {
   const [projects, setProjects] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const handleClick = () => {
+  // Automate This Behavior
+  // const handleClick = () => {
+  //   fetch("http://localhost:4000/projects")
+  //     .then((res) => res.json())
+  //     .then((projects) => setProjects(projects));
+  // };
+
+  useEffect(() => {
     fetch("http://localhost:4000/projects")
       .then((res) => res.json())
       .then((projects) => setProjects(projects));
-  };
+  }, []);
 
   const onToggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
@@ -47,7 +54,7 @@ const App = () => {
       <ProjectForm 
         handleAddProject={handleAddProject}
       />
-      <button onClick={handleClick}>Load Projects</button>
+      {/* <button onClick={handleClick}>Load Projects</button> */}
       <ProjectList 
         projects={projects} 
       />

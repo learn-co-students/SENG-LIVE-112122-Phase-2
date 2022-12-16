@@ -72,11 +72,33 @@ const ProjectForm = ({ handleAddProject }) => {
       // Prevent Default Page Refresh Behavior
       e.preventDefault();
 
-      // Add Each New Project to project State Using Inverse Data Flow
-      handleAddProject(formData);
+      const requestObj = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      }
 
-      // Clear Out Input Values
-      setFormData(initialFormValues);
+      // Optimistic Rendering
+      // handleAddProject(newProject); 
+
+      // Persist Each New Project to db.json
+      fetch("http://localhost:4000/projects", requestObj)
+        .then(res => res.json())
+        .then(newProject => {
+          
+          // Add Each New Project to project State Using Inverse Data Flow
+          // Pessimistic Rendering
+          handleAddProject(newProject);
+
+          // Clear Out Input Values
+          setFormData(initialFormValues);
+        })
+        .catch(() => { 
+            // Optimistic Rendering
+            // A Function to Undo Previous Optimistic Changes
+        });
     }
 
   return (
