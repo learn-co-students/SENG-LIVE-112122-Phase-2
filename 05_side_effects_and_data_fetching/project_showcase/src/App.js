@@ -38,11 +38,13 @@ const App = () => {
     setProjects(newProjectCollection);
   }
 
-
   // useEffect(CB Function (Effect), Dependency Array (Optional))
   useEffect(() => {
-    // console.log("useEffect Hook Fired Off!");
     
+    // Using fetch to Issue Requests to json-server
+      // We can also use fetch to issue requests to 3rd Party APIs
+        // Google Maps
+        // Google Books
     fetch("http://localhost:4000/projects")
       .then((res) => res.json())
       

@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProjectListItem = ({ id, about, image, link, name, phase }) => {
   const [clapCount, setClapCount] = useState(0);
+  const [someOtherState, someSetterFunction] = useState(false);
 
   // const handleClap = () => setClapCount(prevCount => prevCount + 1);
 
-  const handleClap = () => setClapCount(prevClapCount => prevClapCount + 1);
+  const handleClap = () => { 
+    // setClapCount(prevClapCount => prevClapCount + 1)
+    someSetterFunction(!someOtherState);
+  };
 
+  // Adding Dependency Array Variable => Example
+  useEffect(() => {
+    console.log("useEffect Behavior Fired Off!");
+
+    // Other Behaviors That We Wish to Align With
+    // Changes to clapCount State
+  }, [clapCount, someOtherState]);
+  
   return (
     <li className="card">
       <figure className="image">

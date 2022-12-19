@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 
 const Timer = () => {
     
+    console.log("Component Rendered!");
+
     const [ timerCount, setTimerCount ] = useState(0);
 
     const handleClick = () => console.log("Page Clicked!");
@@ -23,9 +25,11 @@ const Timer = () => {
         let intervalId = setInterval(() => {
             console.log("Interval Fired!");
             
-            // setTimerCount(timerCount + 1);
+            
 
             // console.log(intervalId);
+
+            // setTimerCount(timerCount + 1);
 
             setTimerCount(prevCount => prevCount + 1);
         }, 1000);
