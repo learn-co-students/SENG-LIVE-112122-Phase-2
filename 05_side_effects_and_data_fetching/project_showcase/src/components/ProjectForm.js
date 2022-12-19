@@ -18,7 +18,9 @@ const ProjectForm = ({ addNewProject }) => {
   }
 
   const handleFormSubmit = (e) => {      
+    
     e.preventDefault();
+    
     const newProject = formData;
 
     // Deliverable 3: Persist the new project upon the 
@@ -27,8 +29,24 @@ const ProjectForm = ({ addNewProject }) => {
       // Send the new project data to the server using a 
       // `POST` fetch request
 
-    addNewProject(newProject);
-    setFormData(initialFormValues);
+    fetch("http://localhost:4000/projects", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newProject)
+      })
+      .then(res => res.json())
+      .then(project => {
+        // Add "project" to "projects" State
+        addNewProject(project);
+
+        // Clear Out Form Values
+        setFormData(initialFormValues);
+      })
+      .catch(() => {
+        console.error("Something Went Wrong With Adding a New Project!");
+      });
   }
 
   return (

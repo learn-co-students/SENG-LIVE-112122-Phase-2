@@ -45,7 +45,10 @@ const App = () => {
       .then((res) => res.json())
       
       // Updating State => Causes Our App Component to Re-Render
-      .then((projects) => setProjects(projects));
+      .then((projects) => setProjects(projects))
+      .catch(() => {
+        console.error("Something Went Wrong With Fetching Projects!");
+      });
   }, []);
 
   // Dependency Array
