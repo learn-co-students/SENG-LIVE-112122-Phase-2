@@ -1,19 +1,65 @@
-import React from "react";
+import { useState } from "react";
 
-const ProjectForm = () => {
+const ProjectForm = ({ addNewProject }) => {
+
+  const initialFormValues = {
+    name: "",
+    about: "",
+    phase: "",
+    link: "",
+    image: ""
+  }
+
+  const [formData, setFormData] = useState(initialFormValues);
+
+  const handleFormData = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value});
+  }
+
+  const handleFormSubmit = (e) => {      
+    e.preventDefault();
+    const newProject = formData;
+
+    // Deliverable 3: Persist the new project upon the 
+    // `ProjectForm` submission
+
+      // Send the new project data to the server using a 
+      // `POST` fetch request
+
+    addNewProject(newProject);
+    setFormData(initialFormValues);
+  }
+
   return (
     <section>
-      <form className="form" autoComplete="off">
+      <form className="form" autoComplete="off" onSubmit={handleFormSubmit}>
         <h3>Add New Project</h3>
 
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" name="name" />
+        <input 
+          type="text" 
+          id="name" 
+          name="name"
+          value={formData.name}
+          onChange={handleFormData}
+        />
 
         <label htmlFor="about">About</label>
-        <textarea id="about" name="about" />
+        <textarea 
+          id="about" 
+          name="about"
+          value={formData.about}
+          onChange={handleFormData}
+        />
 
         <label htmlFor="phase">Phase</label>
-        <select name="phase" id="phase">
+        <select 
+          name="phase" 
+          id="phase"
+          value={formData.phase}
+          onChange={handleFormData}
+        >
           <option>Select One</option>
           <option value="1">Phase 1</option>
           <option value="2">Phase 2</option>
@@ -23,10 +69,22 @@ const ProjectForm = () => {
         </select>
 
         <label htmlFor="link">Project Homepage</label>
-        <input type="text" id="link" name="link" />
+        <input 
+          type="text" 
+          id="link" 
+          name="link" 
+          value={formData.link}
+          onChange={handleFormData}
+        />
 
         <label htmlFor="image">Screenshot</label>
-        <input type="text" id="image" name="image" />
+        <input 
+          type="text" 
+          id="image" 
+          name="image" 
+          value={formData.image}
+          onChange={handleFormData}
+        />
 
         <button type="submit">Add Project</button>
       </form>
