@@ -12,17 +12,40 @@ import { useState, useEffect } from "react";
 const Timer = () => {
     
     const [ timerCount, setTimerCount ] = useState(0);
-    
+
+    const handleClick = () => console.log("Page Clicked!");
+
     useEffect(() => {
         console.log("useEffect Fired Off!");
+
+        document.addEventListener("click", handleClick);
         
-        setInterval(() => {
+        let intervalId = setInterval(() => {
             console.log("Interval Fired!");
             
             // setTimerCount(timerCount + 1);
 
+            // console.log(intervalId);
+
             setTimerCount(prevCount => prevCount + 1);
         }, 1000);
+
+        const clearEverything = () => {
+            
+            // Clear Out of Our setInterval
+            clearInterval(intervalId);
+
+            // Remove Event Listener
+            document.removeEventListener("click", handleClick);
+        }
+
+        // Clean Up Function
+        return () => { 
+            
+            console.log("Clean Up Fired!");
+
+            clearEverything();
+        };
     }, []);
 
     return (

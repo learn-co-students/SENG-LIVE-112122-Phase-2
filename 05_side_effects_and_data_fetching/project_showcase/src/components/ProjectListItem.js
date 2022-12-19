@@ -5,7 +5,7 @@ const ProjectListItem = ({ id, about, image, link, name, phase }) => {
 
   // const handleClap = () => setClapCount(prevCount => prevCount + 1);
 
-  const handleClap = () => setClapCount(clapCount + 1);
+  const handleClap = () => setClapCount(prevClapCount => prevClapCount + 1);
 
   return (
     <li className="card">
