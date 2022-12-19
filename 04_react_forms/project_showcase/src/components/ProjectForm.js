@@ -72,6 +72,10 @@ const ProjectForm = ({ handleAddProject }) => {
       // Prevent Default Page Refresh Behavior
       e.preventDefault();
 
+      // Clear Out Input Values 
+        // As Opposed To Directly Modifying the DOM
+      setFormData(initialFormValues);
+
       const requestObj = {
         method: "POST",
         headers: {
@@ -91,9 +95,6 @@ const ProjectForm = ({ handleAddProject }) => {
           // Add Each New Project to project State Using Inverse Data Flow
           // Pessimistic Rendering
           handleAddProject(newProject);
-
-          // Clear Out Input Values
-          setFormData(initialFormValues);
         })
         .catch(() => { 
             // Optimistic Rendering
