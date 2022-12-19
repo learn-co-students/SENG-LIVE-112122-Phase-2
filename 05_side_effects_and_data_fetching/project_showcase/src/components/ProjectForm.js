@@ -29,13 +29,16 @@ const ProjectForm = ({ addNewProject }) => {
       // Send the new project data to the server using a 
       // `POST` fetch request
 
-    fetch("http://localhost:4000/projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newProject)
-      })
+    const requestObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newProject)
+    }
+
+
+    fetch("http://localhost:4000/projects", requestObj)
       .then(res => res.json())
       .then(project => {
         // Add "project" to "projects" State
