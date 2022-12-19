@@ -15,7 +15,7 @@ presentation:
 
 - Use the useEffect hook to fetch data
 
-- Understanding component side effects
+- Understand component side effects
 
 <!-- slide style="text-align: left;" -->
 
