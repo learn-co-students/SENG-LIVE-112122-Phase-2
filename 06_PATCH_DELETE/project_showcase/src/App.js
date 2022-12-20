@@ -14,7 +14,7 @@ const App = () => {
     fetch("http://localhost:4000/projects")
       .then((resp) => resp.json())
       .then((projects) => setProjects(projects));
-  });
+  }, []);
 
   const onToggleDarkMode = () => {
     setIsDarkMode((isDarkMode) => !isDarkMode);

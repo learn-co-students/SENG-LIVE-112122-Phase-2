@@ -8,6 +8,7 @@ const ProjectForm = ({ onAddProject }) => {
     link: "",
     image: "",
   };
+  
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
