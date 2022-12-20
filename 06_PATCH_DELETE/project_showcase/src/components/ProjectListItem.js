@@ -29,7 +29,27 @@
   
     const [clapCount, setClapCount] = useState(claps || 0);
   
-    const handleClap = () => setClapCount(prevCount => prevCount + 1);
+    const handleClap = () => { 
+      
+      const requestObj = {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "applicaition/json"
+        },
+        body: JSON.stringify({claps: clapCount + 1})
+      }
+
+      fetch(`http://localhost:4000/projects/${id}`, requestObj)
+      .then(res => res.json())
+      .then(updatedProject => {
+        // console.log(updatedProject);
+
+        // Q: When should this occur?
+        // A: Upon confirmation of successful Update
+        setClapCount(prevCount => prevCount + 1);
+      });
+    };
   
     const handleEditClick = () => {
       enterProjectEditModeFor(id);

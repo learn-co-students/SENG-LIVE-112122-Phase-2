@@ -10,6 +10,7 @@ const App = () => {
   const [projects, setProjects] = useState([]);
   const [projectId, setProjectId] = useState(null);
 
+  // Initial Render
   useEffect(() => {
     fetch("http://localhost:4000/projects")
       .then((resp) => resp.json())
