@@ -70,7 +70,10 @@
       }      
 
       fetch(`http://localhost:4000/projects/${projectId}`, requestObj)
+      
+      // We need "res" 
       .then(res => res.json())
+      
       .then(updatedProject => {
         
         console.log(updatedProject);

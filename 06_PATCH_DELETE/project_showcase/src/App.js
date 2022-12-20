@@ -47,6 +47,20 @@ const App = () => {
     setProjects(updatedProjects);
   }
 
+  const handleDelete =  (deletedProject) => {
+    // - Update the `projects` state in the parent component
+    // `App` using the `.filter` function
+    const updatedProjects = projects.filter(originalProject => {
+      
+      // Still comparing projects by "id"
+      return originalProject.id !== deletedProject.id
+    });
+
+    //  The goal is to return a new array with the deleted project excluded
+    //  and set this as our new value for "projects"
+    setProjects(updatedProjects);
+  }
+
   const renderForm = () => {
     if (projectId) {
       return (
@@ -68,6 +82,7 @@ const App = () => {
       <ProjectList
         projects={projects}
         enterProjectEditModeFor={enterProjectEditModeFor}
+        handleDelete={handleDelete}
       />
     </div>
   );

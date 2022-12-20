@@ -1,13 +1,13 @@
 // Deliverable 2: Click the delete button and make a 
 // DELETE request
 
-// - Attach an `onClick` event listener to the delete 
+// - DONE - Attach an `onClick` event listener to the delete 
 // button
 
-// - Add a `DELETE` fetch request to the event handler 
+// - DONE - Add a `DELETE` fetch request to the event handler 
 // for the delete button
 
-// - Update the `projects` state in the parent component
+// - DONE - Update the `projects` state in the parent component
 // `App` using the `.filter` function
 
   //  The goal is to return a new array with the deleted project excluded
@@ -23,7 +23,7 @@
   import { useState } from "react";
   import { FaPencilAlt, FaTrash } from "react-icons/fa";
   
-  const ProjectListItem = ({ project, enterProjectEditModeFor }) => {
+  const ProjectListItem = ({ project, enterProjectEditModeFor, handleDelete }) => {
     
     const { id, image, about, name, link, phase, claps } = project;
   
@@ -35,7 +35,22 @@
       enterProjectEditModeFor(id);
     };
   
-    const handleDeleteClick = () => {};
+    const handleDeleteClick = () => {
+      // - Add a `DELETE` fetch request to the event handler 
+      // for the delete button
+
+      const requestObj = {
+        method: "DELETE"
+      }
+
+      fetch(`http://localhost:4000/projects/${id}`, requestObj)
+        // .then(res => res.json())
+        .then(() => {
+          console.log("Project Deleted!");
+
+          handleDelete(project);
+        });
+    };
   
     return (
       <li className="card">
