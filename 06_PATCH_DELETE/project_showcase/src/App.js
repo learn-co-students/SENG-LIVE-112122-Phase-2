@@ -32,12 +32,28 @@ const App = () => {
     setProjectId(projectId);
   };
 
+  const handleUpdate = (updatedProject) => {
+    // Find Updated Project in projects (.map)
+    const updatedProjects = projects.map(originalProject => {
+      if (originalProject.id === updatedProject.id) {
+        return updatedProject;
+      } else {
+        return originalProject;
+      }
+    });
+
+    // Replace old objects in "projects" state with new
+    // list containing updated project
+    setProjects(updatedProjects);
+  }
+
   const renderForm = () => {
     if (projectId) {
       return (
         <ProjectEditForm
           projectId={projectId}
           completeEditing={completeEditing}
+          handleUpdate={handleUpdate}
         />
       );
     } else {
