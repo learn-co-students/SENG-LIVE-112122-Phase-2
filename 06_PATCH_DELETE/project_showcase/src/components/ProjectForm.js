@@ -25,6 +25,10 @@ const ProjectForm = ({ onAddProject }) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
+      
+      // For every new project that we create,
+      // we want to automatically pass "claps"
+      // with a value of "0"
       body: JSON.stringify({ ...formData, claps: 0 }),
     };
 

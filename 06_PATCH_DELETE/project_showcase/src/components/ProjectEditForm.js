@@ -53,6 +53,14 @@
       // `handleSubmit` to include a `PATCH` request
 
       const requestObj = {
+        
+        // Why not "PUT"?
+
+          // PATCH => Update an individual part of the data object and return entire
+            // object
+          // PUT => Update an individual part of the data object and ONLY return
+            // the object with that updated field
+          
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -65,6 +73,8 @@
       .then(res => res.json())
       .then(updatedProject => {
         
+        console.log(updatedProject);
+
         // TWO GOALS => Update Data (Back End) + Update State (Front End)
 
         // Update the `projects` state in the parent 

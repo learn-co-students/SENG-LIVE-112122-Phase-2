@@ -24,6 +24,7 @@
   import { FaPencilAlt, FaTrash } from "react-icons/fa";
   
   const ProjectListItem = ({ project, enterProjectEditModeFor }) => {
+    
     const { id, image, about, name, link, phase, claps } = project;
   
     const [clapCount, setClapCount] = useState(claps || 0);
