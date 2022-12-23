@@ -6,16 +6,16 @@
 
     // Switch Case Statements in JS => One Value That We Check Against a Number of Cases 
 
-  // - Import the `Route` component from the `react-router-dom` library 
+  // DONE - Import the `Route` component from the `react-router-dom` library 
   // and wrap each individual component designated for routing
 
-  //   - Provide the `path` prop to the `Route` component to create a URL 
+  // DONE  - Provide the `path` prop to the `Route` component to create a URL 
   // path associated with the component
 
-  // - Demonstrate each route in the browser to confirm desired expectation 
+  // DONE - Demonstrate each route in the browser to confirm desired expectation 
   // is occuring
 
-  // - Demonstrate the use of the `exact` prop passed to the `Route` 
+  // DONE - Demonstrate the use of the `exact` prop passed to the `Route` 
   // component
 
   import { useState, useEffect } from "react";
@@ -75,6 +75,7 @@
               <Home />
             </Route>
             
+            {/* Most Specific... */}
             {/* /projects/:id/edit => Edit Form for Individual Projects */}
             <Route path="/projects/:id/edit">
               <ProjectEditForm onUpdateProject={onUpdateProject} />
@@ -90,6 +91,7 @@
               {/* <ProjectDetail /> */}
             </Route>
 
+            {/* Least Specific... */}
             {/* /projects => All Projects */}
             <Route path="/projects">
               <ProjectList
