@@ -1,3 +1,6 @@
+// Deliverable 5: Using the useHistory hook, automatically redirect the user 
+// to the `ProjectShow` page upon submit
+
 import React, { useState, useEffect } from "react";
 
 const ProjectEditForm = ({ onUpdateProject }) => {
@@ -10,10 +13,6 @@ const ProjectEditForm = ({ onUpdateProject }) => {
   });
 
   const { name, about, phase, link, image } = formData;
-
-  // const { id } = useParams()
-
-  // const history = useHistory()
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/1`)

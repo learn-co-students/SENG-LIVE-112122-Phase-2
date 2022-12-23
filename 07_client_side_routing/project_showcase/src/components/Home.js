@@ -1,3 +1,6 @@
+// Deliverable 3: Add navigation to the application using the `Link`
+// component
+
 import { useEffect, useState } from "react";
 
 const Home = () => {

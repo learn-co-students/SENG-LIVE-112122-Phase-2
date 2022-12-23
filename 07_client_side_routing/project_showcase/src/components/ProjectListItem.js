@@ -1,3 +1,6 @@
+// Deliverable 3: Add navigation to the application using the `Link`
+// component
+
 import { useState } from "react";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
 
@@ -10,7 +13,7 @@ const ProjectListItem = ({
 
   const [clapCount, setClapCount] = useState(0);
 
-  const handleClap = (clapCount) => setClapCount(clapCount + 1);
+  const handleClap = () => setClapCount(clapCount + 1);
 
   const handleEditClick = () => {
     enterProjectEditModeFor(id);

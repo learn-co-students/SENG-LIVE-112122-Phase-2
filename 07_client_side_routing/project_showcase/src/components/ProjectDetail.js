@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+// Deliverable 4: Using the useParams hook, access the :id param from the URL
+// to trigger appropriate GET requests
+
+import { useEffect, useState } from "react";
 
 const ProjectDetail = () => {
   const [claps, setClaps] = useState(0);

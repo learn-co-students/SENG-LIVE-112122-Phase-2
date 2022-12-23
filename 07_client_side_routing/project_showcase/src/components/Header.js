@@ -1,27 +1,33 @@
-import React from "react";
+// Deliverable 3: Add navigation to the application using the `Link` and 
+// `NavLink` components
 
-const Header = ({ isDarkMode, onToggleDarkMode }) => {
-  const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
+  // - Convert any html anchor tags to `Link` or `NavLink`
 
-  return (
-    <header>
-      <nav>
-        <h1 className="branding">
-          <span className="logo">{"//"}</span>
-          Project Showcase
-        </h1>
-        <div className="navigation">
-          <a className="button" href="/projects">
-            All Projects
-          </a>
-          <a className="button" href="/projects/new">
-            Add Project
-          </a>
-          <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
-        </div>
-      </nav>
-    </header>
-  );
-};
+  // - Demonstrate the difference between `Link` and `NavLink`
 
-export default Header;
+  const Header = ({ isDarkMode, onToggleDarkMode }) => {
+    const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
+  
+    return (
+      <header>
+        <nav>
+          <h1 className="branding">
+            <span className="logo">{"//"}</span>
+            Project Showcase
+          </h1>
+          <div className="navigation">
+            <a className="button" href="/projects">
+              All Projects
+            </a>
+            <a className="button" href="/projects/new">
+              Add Project
+            </a>
+            <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
+          </div>
+        </nav>
+      </header>
+    );
+  };
+  
+  export default Header;
+  
