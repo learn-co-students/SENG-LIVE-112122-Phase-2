@@ -1,31 +1,35 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+// Deliverable 3: Import / Add `Button` Styled Component
 
-const Header = ({ isDarkMode, onToggleDarkMode }) => {
-  const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
+  // How can we make `Button` render to the DOM as a `Link` component?
 
-  return (
-    <header className="navigation">
-      <h1 className="branding">
-        <Link to="/">
-          <span className="logo">{"//"}</span>
-          Project Showcase
-        </Link>
-      </h1>
-      <nav>
-        <NavLink className="button" exact to="/projects">
-          All Projects
-        </NavLink>
-        <NavLink className="button" to="/projects/new">
-          Add Project
-        </NavLink>
-        <NavLink className="button" to="/about">
-          About
-        </NavLink>
-        <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
-      </nav>
-    </header>
-  );
-};
+  import { NavLink, Link } from "react-router-dom";
 
-export default Header;
+  const Header = ({ isDarkMode, onToggleDarkMode }) => {
+    const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
+  
+    return (
+      <header className="navigation">
+        <h1 className="branding">
+          <Link to="/">
+            <span className="logo">{"//"}</span>
+            Project Showcase
+          </Link>
+        </h1>
+        <nav>
+          <NavLink className="button" exact to="/projects">
+            All Projects
+          </NavLink>
+          <NavLink className="button" to="/projects/new">
+            Add Project
+          </NavLink>
+          <NavLink className="button" to="/about">
+            About
+          </NavLink>
+          <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
+        </nav>
+      </header>
+    );
+  };
+  
+  export default Header;
+  

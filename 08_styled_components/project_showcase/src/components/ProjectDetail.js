@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+// Deliverable 3: Import / Add `Button` Styled Component
+
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
