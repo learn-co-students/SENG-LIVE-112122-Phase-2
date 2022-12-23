@@ -71,31 +71,31 @@
           <Switch>
             
             {/* / => Root Route */}
-            <Route path="/">
+            <Route exact path="/">
               <Home />
-            </Route>
-            
-            {/* /projects => All Projects */}
-            <Route path="/projects">
-              <ProjectList
-                projects={projects}
-                onDeleteProject={onDeleteProject}
-              />
             </Route>
             
             {/* /projects/:id/edit => Edit Form for Individual Projects */}
             <Route path="/projects/:id/edit">
               <ProjectEditForm onUpdateProject={onUpdateProject} />
             </Route>
-            
+
             {/* /projects/new => Create Form for New Projects  */}
             <Route path="/projects/new">
               <ProjectForm onAddProject={onAddProject} />
             </Route>
-            
+
             {/* /projects/:id => Show Page for Individual Projects */}
             <Route path="/projects/:id">
               {/* <ProjectDetail /> */}
+            </Route>
+
+            {/* /projects => All Projects */}
+            <Route path="/projects">
+              <ProjectList
+                projects={projects}
+                onDeleteProject={onDeleteProject}
+              />
             </Route>
           </Switch>
       </div>
