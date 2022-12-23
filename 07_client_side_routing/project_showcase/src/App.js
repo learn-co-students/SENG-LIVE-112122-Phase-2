@@ -1,8 +1,10 @@
 // Deliverable 2: Use Switch and Route to set up initial routes so we can 
 // conditionally render components based on URL
 
-  // - Import the `Switch` component from the `react-router-dom` library 
+  // DONE - Import the `Switch` component from the `react-router-dom` library 
   // and wrap the components designated for routing
+
+    // Switch Case Statements in JS => One Value That We Check Against a Number of Cases 
 
   // - Import the `Route` component from the `react-router-dom` library 
   // and wrap each individual component designated for routing
@@ -17,6 +19,8 @@
   // component
 
   import { useState, useEffect } from "react";
+
+  import { Switch, Route } from "react-router-dom";
 
   import Header from "./components/Header";
   import ProjectForm from "./components/ProjectForm";
@@ -63,15 +67,37 @@
   
     return (
       <div className={isDarkMode ? "App" : "App light"}>
-        <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
-        <Home />
-        <ProjectList
-          projects={projects}
-          onDeleteProject={onDeleteProject}
-        />
-        <ProjectEditForm onUpdateProject={onUpdateProject} />
-        <ProjectForm onAddProject={onAddProject} />
-        {/* <ProjectDetail /> */}
+          <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
+          <Switch>
+            
+            {/* / => Root Route */}
+            <Route path="/">
+              <Home />
+            </Route>
+            
+            {/* /projects => All Projects */}
+            <Route path="/projects">
+              <ProjectList
+                projects={projects}
+                onDeleteProject={onDeleteProject}
+              />
+            </Route>
+            
+            {/* /projects/:id/edit => Edit Form for Individual Projects */}
+            <Route path="/projects/:id/edit">
+              <ProjectEditForm onUpdateProject={onUpdateProject} />
+            </Route>
+            
+            {/* /projects/new => Create Form for New Projects  */}
+            <Route path="/projects/new">
+              <ProjectForm onAddProject={onAddProject} />
+            </Route>
+            
+            {/* /projects/:id => Show Page for Individual Projects */}
+            <Route path="/projects/:id">
+              {/* <ProjectDetail /> */}
+            </Route>
+          </Switch>
       </div>
     );
   };
