@@ -2,6 +2,8 @@
 
   // How can we make `Button` render to the DOM as a `Link` component?
 
+  import { Button } from "./shared";
+
   import { useEffect, useState } from "react";
   import { Link } from "react-router-dom";
   
@@ -29,9 +31,9 @@
           <p key={project.id}>{project.name}</p>
         ))}
         <div style={{ margin: "1rem 0" }}>
-          <Link className="button" to="/projects">
+          <Button as={Link} to="/projects">
             View All Projects
-          </Link>
+          </Button>
         </div>
       </section>
     );
