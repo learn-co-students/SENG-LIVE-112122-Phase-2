@@ -88,7 +88,7 @@
 
             {/* /projects/:id => Show Page for Individual Projects */}
             <Route path="/projects/:id">
-              {/* <ProjectDetail /> */}
+              <ProjectDetail />
             </Route>
 
             {/* Least Specific... */}

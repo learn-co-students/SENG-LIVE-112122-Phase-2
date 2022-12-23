@@ -3,19 +3,36 @@
 
 import { useEffect, useState } from "react";
 
+import { useParams } from "react-router-dom";
+
 const ProjectDetail = () => {
   const [claps, setClaps] = useState(0);
   const [project, setProject] = useState(null);
+  const [isLoaded, setisLoaded] = useState(false);
 
-  const id = 1;
+  // console.log(useParams());
+  // useParams() => Returns an object with a key of :id and value from URL
+
+  // What can I do with return of useParams() since it's an object?
+  const { id } = useParams();
+
+  // Hard Coded Value for ID
+  // const id = 1;
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
       .then((r) => r.json())
       .then((project) => {
+        
+        // Update project state from "null" to Project Object
         setProject(project);
+        
+        // Update isLoaded to "true" once we have updated "project" state
+        setisLoaded(!isLoaded);
       });
   }, [id]);
+
+  if (!isLoaded) return <h1>Loading...</h1>;
 
   const { image, name, about, link, phase } = project;
 
