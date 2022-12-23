@@ -16,7 +16,7 @@ const ProjectEditForm = ({ onUpdateProject }) => {
 
   const { name, about, phase, link, image } = formData;
 
-  // console.log(useHistory());
+  console.log(useHistory());
 
   const { id } = useParams();
   
@@ -52,6 +52,8 @@ const ProjectEditForm = ({ onUpdateProject }) => {
         onUpdateProject(updatedProj);
         
         // Redirect User to Show page for updated Project
+        // history.push => Where do we want to "push" the User to?
+          // Note: This will not trigger a refresh
         history.push(`/projects/${id}`);
       });
   };

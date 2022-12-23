@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
   const [claps, setClaps] = useState(0);
@@ -65,6 +65,8 @@ const ProjectDetail = () => {
           <div className="extra">
             <span className="badge blue">Phase {phase}</span>
           </div>
+          <br />
+          <Link className="button" to="/projects">Back to Projects</Link>
         </div>
       </div>
     </section>
