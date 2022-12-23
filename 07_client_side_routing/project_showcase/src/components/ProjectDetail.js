@@ -10,8 +10,9 @@ const ProjectDetail = () => {
   const [project, setProject] = useState(null);
   const [isLoaded, setisLoaded] = useState(false);
 
-  // console.log(useParams());
+  console.log(useParams());
   // useParams() => Returns an object with a key of :id and value from URL
+    // {id: 1}
 
   // What can I do with return of useParams() since it's an object?
   const { id } = useParams();
@@ -35,6 +36,8 @@ const ProjectDetail = () => {
   if (!isLoaded) return <h1>Loading...</h1>;
 
   const { image, name, about, link, phase } = project;
+
+  console.log(project.id);
 
   const handleClapClick = () => {
     setClaps((claps) => claps + 1);

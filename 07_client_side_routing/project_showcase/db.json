@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": 1,
-      "name": "Book HER",
+      "name": "TESTING",
       "about": "The app takes you (the Casting Director) through a series of questions to determine the Models you need for your next Project.",
       "phase": 4,
       "link": "https://bookher.netlify.app/new_project",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "name": "Code Bucket #100",
+      "name": "TEST",
       "about": "Web-based CSS, JS and HTML Editor",
       "phase": 4,
       "link": "https://code-bucket.netlify.app",
@@ -29,7 +29,7 @@
     },
     {
       "id": 11,
-      "name": "Yourseum",
+      "name": "YOURSEUM",
       "about": "Find great art",
       "phase": 4,
       "link": "https://yourseum.netlify.app",
@@ -38,7 +38,7 @@
     },
     {
       "id": 12,
-      "name": "Spreddit",
+      "name": "TESTING",
       "about": "A Global Community of Like Minded Humans Socially Distancing ",
       "phase": 4,
       "link": "https://spreddit.netlify.app",
