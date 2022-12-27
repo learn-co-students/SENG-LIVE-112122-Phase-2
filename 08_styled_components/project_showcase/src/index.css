@@ -1,38 +1,6 @@
-:root {
-  --turquoise: #00efe1;
-  --mid-turquoise: #14d5c9;
-  --dark-turquoise: #00333f;
-  --black: #030416;
-  --white: #f1f1f1;
-  --grey: #d6e2e7;
-  --dark-grey: #7f8a8e;
-  --yellow: #f9c51a;
-  --orange: #ff5c00;
-  --fuschia: #e80352;
-  --blue: #338fff;
-  --blue-dark: #145cb3;
-  --purple: #cda2ff;
-  --green: #00ef7c;
-  --color: var(--white);
-  --background: var(--black);
-  --primary: var(--turquoise);
-}
+/* Global Styles */
 
-/* layout */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Fira Code", monospace;
-  font-size: 16px;
-  color: var(--color);
-  background-color: var(--background);
-}
-
-.App {
+/* .App {
   color: var(--color);
   background-color: var(--background);
   min-height: 100vh;
@@ -42,7 +10,7 @@ body {
   --color: var(--black);
   --background: var(--white);
   --primary: var(--dark-turquoise);
-}
+} */
 
 section {
   padding: 2rem;
@@ -52,31 +20,6 @@ section {
 }
 
 /* buttons */
-button, .button {
-  appearance: auto;
-  padding: 0.5rem 0.75rem;
-  border: none;
-  font: inherit;
-  font-weight: 600;
-  color: inherit;
-  cursor: pointer;
-  color: var(--primary);
-  background-color: var(--background);
-  border: 2px solid var(--dark-turquoise);
-  transition: background-color 0.2s;
-}
-
-button.active,
-button:focus,
-button:hover,
-.button.active,
-.button:focus,
-.button:hover {
-  outline: none;
-  color: var(--background);
-  background-color: var(--primary);
-  border: 2px solid var(--primary);
-}
 
 button:disabled,
 .button:disabled {
@@ -131,12 +74,12 @@ header {
 
 /* forms */
 .form {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   width: 500px;
   margin: 0 auto;
   border: 2px solid var(--dark-turquoise);
-  padding: 1.75rem;
+  padding: 1.75rem; */
 }
 
 .form h3 {
@@ -146,21 +89,21 @@ header {
 input,
 textarea,
 select {
-  margin-top: 0.25rem;
+  /* margin-top: 0.25rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: none;
   font-size: 1.25rem;
   font-weight: bold;
   transition: all 0.3s;
-  border: 2px solid var(--color);
+  border: 2px solid var(--color); */
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
-  border: 2px solid var(--primary);
+  /* outline: none;
+  border: 2px solid var(--primary); */
 }
 
 .form button[type="submit"] {

@@ -5,6 +5,7 @@
     // textarea
     // select 
 
+    import { Button, Input, Form } from "./shared";
 
     import { useState, useEffect } from "react";
     import { useParams, useHistory } from "react-router-dom";
@@ -56,11 +57,11 @@
       };
     
       return (
-        <form onSubmit={handleSubmit} className="form" autoComplete="off">
+        <Form onSubmit={handleSubmit} autoComplete="off">
           <h3>Edit Project</h3>
     
           <label htmlFor="name">Name</label>
-          <input
+          <Input
             type="text"
             id="name"
             name="name"
@@ -69,7 +70,8 @@
           />
     
           <label htmlFor="about">About</label>
-          <textarea
+          <Input
+            as="textarea"
             id="about"
             name="about"
             value={about}
@@ -77,7 +79,8 @@
           />
     
           <label htmlFor="phase">Phase</label>
-          <select
+          <Input
+            as="select"
             name="phase"
             id="phase"
             value={phase}
@@ -88,10 +91,10 @@
             <option value="3">Phase 3</option>
             <option value="4">Phase 4</option>
             <option value="5">Phase 5</option>
-          </select>
+          </Input>
     
           <label htmlFor="link">Project Homepage</label>
-          <input
+          <Input
             type="text"
             id="link"
             name="link"
@@ -100,7 +103,7 @@
           />
     
           <label htmlFor="image">Screenshot</label>
-          <input
+          <Input
             type="text"
             id="image"
             name="image"
@@ -108,8 +111,8 @@
             onChange={handleChange}
           />
     
-          <button type="submit">Update Project</button>
-        </form>
+          <Button type="submit">Update Project</Button>
+        </Form>
       );
     };
     

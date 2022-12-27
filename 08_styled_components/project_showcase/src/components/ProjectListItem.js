@@ -1,6 +1,8 @@
-// Deliverable 4: Import / Add `Button` + `Input` Styled Components
+// Deliverable 4: Import / Add `Button` Styled Component
 
   // How can we make `Button` render to the DOM as `Link` component?
+
+  import { Button } from "./shared";
 
   import { useState } from "react";
   import { FaPencilAlt, FaTrash } from "react-icons/fa";
@@ -56,9 +58,9 @@
       <li className="card">
         <figure className="image">
           <img src={image} alt={name} />
-          <button onClick={handleClap} className="claps">
+          <Button onClick={handleClap} className="claps">
             👏{clapCount}
-          </button>
+          </Button>
         </figure>
   
         <section className="details">
@@ -74,14 +76,14 @@
         <footer className="extra">
           <span className="badge blue">Phase {phase}</span>
           <div className="manage">
-            <Link to={`projects/${id}/edit`} style={{ borderBottom: "none" }}>
-              <button onClick={handleEditClick}>
+            <Button onClick={handleEditClick}>
+              <Link to={`projects/${id}/edit`} style={{ borderBottom: "none" }}>
                 <FaPencilAlt />
-              </button>
-            </Link>
-            <button onClick={handleDeleteClick}>
+              </Link>
+            </Button>
+            <Button onClick={handleDeleteClick}>
               <FaTrash />
-            </button>
+            </Button>
           </div>
         </footer>
       </li>
